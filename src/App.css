@@ -1,6 +1,10 @@
 
 .navbar{
   z-index: 10000001;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 5% 16px 5%;
 }
 
 .navbar ul li{
@@ -18,13 +22,6 @@
 text-decoration: underline solid black;
 }
 
-
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 16px 5% 16px 5%;
-}
 .icons{
 width: 148px;
 display: flex;
@@ -52,7 +49,228 @@ justify-content: flex-end;
   cursor: pointer;
 }
 
+.header{
+  background-color: #495E57;
+  margin: 0 5% 0 5%;
+  color: white;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 84px;
+}
 
+.banner p{
+  width: 60%;
+}
+h2 {
+  color: #F4CE14;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.header img{
+  width: 500px;
+}
+
+button {
+  background-color: #F4CE14;
+  color: #495E57;
+  padding: 8px 16px;
+  border: none;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menuItems{
+  margin: 3% 5% 3% 5%; 
+}
+
+.menuHeading{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menuCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: burlywood;
+  width: 320px;
+margin: 16px 0 16px 0px;
+padding: 2%;
+}
+
+.menuCard .tilte{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.horizontalCards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.testimonials{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    margin: 3% 5% 3% 5%; 
+  }
+
+  .reviewHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+    align-items: center;
+  }
+
+
+.reviewCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #495E57;
+  color: white;
+  width: 390px;
+  margin: 12px 12px 12px;
+padding: 1.5% 1.5% 1.5% 1.5%;
+  border-radius: 12px;
+}
+
+.reviews{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.reviewCard .reviewHeading img{
+  height: 25px;
+}
+
+
+.aboutUs{
+  margin: 0 5% 0 5%;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 84px;
+}
+
+.aboutUs img{
+  height: 500px;
+}
+
+.footer .upBtn img{
+  width: 24px;
+}
+
+.footer .upBtn{
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+.footer ul li{
+  list-style:  none;
+}
+
+.footer ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+.about p{
+  width: 60%;
+}
+
+.footer{
+  width: 100%;
+  background-color: #495E57;
+  height: 350px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  color: white;
+  padding:3% 5% 3% 5%;
+}
+
+.logoWhite{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start:1 ;
+  grid-row-end:3 ;
+  align-self: center;
+  justify-self:center;
+}
+
+.address{
+  grid-column-start: 2;
+  grid-column-end:3 ;
+  align-self:end;
+  justify-self:start;
+  font-size: 24px;
+}
+
+.phoneEmail{
+  grid-row-start:2;
+  grid-row-end: 3;
+  grid-column-start:2 ;
+  grid-column-end: 3;
+  align-self:end;
+  justify-self:start;
+}
+
+.smallMenu{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  align-self:end;
+  justify-self:end;
+}
+.socialmedia{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  align-self:end;
+  justify-self:start;
+}
+
+.copyright{
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  align-self:end;
+  justify-self:center;
+}
+
+.upBtn{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
 
 @media screen and (max-width:768px) {
   .menu{
@@ -81,5 +299,9 @@ justify-content: flex-end;
   .menu.visible li{
     padding: 2%;
     margin: 1%;
+  }
+
+  .header img{
+    display: none;
   }
 }
