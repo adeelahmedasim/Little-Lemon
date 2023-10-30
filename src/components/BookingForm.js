@@ -14,7 +14,7 @@ props.submitForm(e)
 }
   const handleChange=(e)=>{
 setDate(e);
-//props.dispatch(e);
+props.dispatch(e);
 
 }
 
@@ -32,14 +32,10 @@ setDate(e);
    <input type="date" id="res-date" className='dateBox' value={date} onChange={(e)=> handleChange(e.target.value)} />
    <label htmlFor="res-time">Choose time</label>
    <select id="res-time " value={time} className='timeBox' onChange={e=> setTime(e.target.value)}>
-      <option value="Select Time"></option>
-        <option>17:00</option>
-        <option>18:00</option>
-        <option>19:00</option>
-        <option>20:00</option>
-        <option>21:00</option>
-        <option>22:00</option>
-     
+      <option value="">Select Time</option>
+     {
+      props.availableTime.availableTime.map(availableTime=>{return <option key={availableTime}>{availableTime}</option>})
+     }
    </select>
    <label htmlFor="guests" >Number of guests</label>
    <input type="number" className='guestBox' placeholder="1" min="1" max="10" id="guests" value={guests} onChange={e=> setGuests(e.target.value)}/>
@@ -52,7 +48,7 @@ setDate(e);
 
 
           <div className='submitBtn'>
-   <input type="submit" onClick={handleSubmit} value="Make Your reservation"/>
+   <input aria-label='On Click' type="submit" onClick={handleSubmit} value="Make Your reservation"/>
    </div>
       </fieldset>
       
