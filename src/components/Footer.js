@@ -2,6 +2,13 @@ import React from 'react'
 import LogoW from './assets/logo white.png'
 import Arrow from './assets/arrow.png'
 export default function Footer() {
+
+
+        const goToBtn=()=>{
+            window.scrollTo({top:0, behavior:'smooth'})}
+
+
+
   return (
     <section className='footer'>
       <img src={LogoW} alt="" className='logoWhite' />
@@ -51,7 +58,7 @@ Charlottesville, Chicago 44635</h4>
 <p className='copyright'>© 2020 Little Lemon . All rights reserved.</p>
 
 
-<button className='upBtn'><img src={Arrow} alt="" /></button>
+<button className='upBtn'><img src={Arrow} alt=""  onClick={goToBtn}/></button>
     </section>
   )
 }

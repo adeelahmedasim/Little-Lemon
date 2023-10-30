@@ -5,15 +5,17 @@ import Main from './components/Main';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Footer from './components/Footer';
+import MenuItems from './components/MenuItems';
 import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <>
     <Navbar/>
-    <Header/>
     <Main/>
+    <MenuItems/>
     <Testimonials/>
   <About/>
+  
     <Footer/>
     </>
   );

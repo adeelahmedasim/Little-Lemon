@@ -1,29 +1,60 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import MenuCard from './MenuCard'
-import chicken from './assets/chicken.jpg'
-import fish from './assets/fish.jpg'
 
-import cheesecake from './assets/cheesecake.jpg'
+import { Route, Router, Routes, useNavigate } from 'react-router-dom';
+import Header from './Header';
+import Booking from './Booking';
+import BookingConfirm from './BookingConfirm';
 
-export default function Main() {
+export default function Main(){
+
+  {/*const seedRandom = (seed) => {
+    var m = 2 ** 35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function() {
+      return (s = (s * a) % m) / m;
+    }
+  }*/}
+
+  {/*const fetchAPI = function(date) {
+    let result = [];
+    let random = seedRandom(date.getDate());
+    for (let i = 17; i <= 23; i++) {
+      if (random() < 0.5) {
+        result.push(i + ':00');
+      } else if (random() > 0.5) {
+        result.push(i + ':30');
+      }
+    }
+    return result;
+  }*/}
+
+  const submitAPI = function(formData) {
+    return true;
+  }
+
+{/*  function updateTime(state, date) {
+    return { availableTime: fetchAPI(date) };
+  }*/}
+
+  {/*const initialState = { availableTime: fetchAPI(new Date()) }
+const [state, dispatch] = useReducer(updateTime, initialState)*/}
+
+  const navigate = useNavigate()
+
+  function submitForm(formData) {
+    if (submitAPI(formData)) {
+      navigate('/BookingConfirm')
+    }
+  }
+
   return (
-    <section className='menuItems'>
-
-
-    <div className='menuHeading'>
-    <h3>Hot Deals</h3>
-    <Link to='/menu'><button>Menu</button></Link>
-    </div>
-
-    <div className='horizontalCards'>
-        <MenuCard title="Zesty Lemon Herb Chicken" price="$16.99"  description="Tender chicken breasts marinated in a blend of fresh lemon juice, aromatic herbs, and a hint of garlic, then grilled to perfection. Served with a side of citrus-infused quinoa and sautéed seasonal vegetables." image={chicken}/>
-
-        <MenuCard title="Citrus-Kissed Salmon Salad" price="$18.99"  description="A light and refreshing salad featuring flaky, lemon-infused grilled salmon atop a bed of mixed greens, cherry tomatoes, cucumber, and avocado. Drizzled with a tangy citrus vinaigrette and garnished with toasted almonds." image={fish}/>
-        
-        <MenuCard title="Lemon Blueberry Cheesecake" price="$14.99"  description="A luscious, velvety cheesecake infused with the bright flavors of lemon zest and studded with plump, juicy blueberries. Nestled atop a buttery graham cracker crust and finished with a delicate lemon glaze." image={cheesecake}/>
-    </div>
-      
-    </section>
+    <main>
+      <Routes>
+        <Route path='/' element={<Header />} />
+        <Route path='/booking' element={<Booking submitForm={submitForm} />} />
+        <Route path='/' element={<Header />} />
+        <Route path='/BookingConfirm' element={<BookingConfirm/>}/>
+         </Routes>
+    </main>
   )
 }
