@@ -330,6 +330,11 @@ padding: 1.5% 1.5% 1.5% 1.5%;
   grid-column-end: 2;
 }
 
+.submitBtn input:disabled{
+  background-color: #a2cfc0;
+color: #eee09c;
+}
+
 .guestBox{
   color:#F4CE14;
   background:#495E57;

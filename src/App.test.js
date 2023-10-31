@@ -1,8 +1,24 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import BookingForm from './components/BookingForm';
+import Main from './components/Main';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('Renders the BookingForm heading', () => {
+  render(<BookingForm />);
+  const headingElement = screen.getByText('Book Now!');
+  expect(headingElement).toBeInTheDocument();
+});
+
+test('updateTimes reducer', () => {
+  render(<Main/>)
+  const initialState = { availableTime: ['10:00', '10:30', '11:00'] };
+  const newDate = new Date('2023-11-01');
+  const newState = updateTime(initialState, newDate);
+  expect(newState.availableTime).toEqual(expect.arrayContaining(['10:00', '10:30', '11:00']));
+});
+
+test('initializeTimes reducer', () => {
+  render(<Main/>)
+  const initialState =  { availableTime: [] };
+  const newState = fetchAPI(initialState);
+  expect(newState.availableTime).toEqual(expect.any(Array));
 });
